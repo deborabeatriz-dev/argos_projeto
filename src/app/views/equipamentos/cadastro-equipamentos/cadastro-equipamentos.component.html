@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Área de Cadastro</h1>
+  <h2>Dados equipamentos</h2>
+  <form>
+    <div>
+      <label>Placa</label>
+      <input type="text" name="placaEquipamento" ngControl="placaEquipamento" />
+    </div>
+    <div>
+      <label>Modelo</label>
+      <input type="text" name="modeloEquipamento" ngControl="modeloEquipamento" />
+    </div>
+    <div>
+      <label>Ano</label>
+      <input type=int name="anoEquipamento" ngControl="anoEquipamento" />
+    </div>
+  </form>
+  <h2>Dados dispositivo</h2>
+  <form>
+    <div>
+      <label>Nome do dispositivo</label>
+      <input type="text" name="nomeDispositivo" ngControl="nomeDispositivo" />
+    </div>
+    <div>
+      <label>Serial</label>
+      <input type=int name="serialDispositivo" ngControl="serialDispositivo" id="serialDispositivo"/>
+    </div>
+  </form>
+  <div>
+    <button type="button" (click)="salvarCadasto()">Salvar</button>
+  </div>
+</body>
+</html>
