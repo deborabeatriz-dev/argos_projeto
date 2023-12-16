@@ -21,20 +21,10 @@
       <label>Ano</label>
       <input type=int name="anoEquipamento" ngControl="anoEquipamento" />
     </div>
-  </form>
-  <h2>Dados dispositivo</h2>
-  <form>
+
     <div>
-      <label>Nome do dispositivo</label>
-      <input type="text" name="nomeDispositivo" ngControl="nomeDispositivo" />
-    </div>
-    <div>
-      <label>Serial</label>
-      <input type=int name="serialDispositivo" ngControl="serialDispositivo" id="serialDispositivo"/>
+      <button type="button" (click)="salvarCadasto()">Salvar</button>
     </div>
   </form>
-  <div>
-    <button type="button" (click)="salvarCadasto()">Salvar</button>
-  </div>
 </body>
 </html>

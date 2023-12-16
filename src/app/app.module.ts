@@ -12,7 +12,7 @@ import { CadastroEquipamentosComponent } from './views/equipamentos/cadastro-equ
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
