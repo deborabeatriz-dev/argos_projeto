@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.component.css">
+  <title>Formulário</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Empresa Monitoramento</h1>
+    <h2>Banco de Equipamentos</h2>
+    <form>
+
+      <div>
+        <label>Pesquisar por id</label>
+        <input type= number [(ngModel)]="idPesquisa" name="idPesquisa" />
+      </div>
+        <button (click)="pesquisarEquipamentoId(+idPesquisa)" > Pesquisar </button>
+
+      <div>
+        <label>Id</label>
+        <input type="number" disabled [(ngModel)]="idForm" name="idForm" />
+      </div>
+
+      <div>
+        <label>Placa</label>
+        <input type="text" [(ngModel)]="placaForm" name="placaForm" />
+      </div>
+
+      <div>
+        <label>Modelo</label>
+        <input type="text" [(ngModel)]="modeloForm" name="modeloForm" />
+      </div>
+
+      <div>
+        <label>Ano</label>
+        <input type=number [(ngModel)]="anoForm" name="anoForm" />
+      </div>
+
+      <button class="criar-salvar" (click)="buttonClick()">
+        {{ idForm ? 'Salvar' : 'Criar' }}
+      </button>
+
+    </form>
+    <div>
+    <table>
+      <thead>
+        <th> Id </th>
+        <th> Placa </th>
+        <th> Modelo </th>
+        <th> Ano </th>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let equipamento of equipamentos$ | async">
+          <td> {{ equipamento.id }} </td>
+          <td> {{ equipamento.placa }} </td>
+          <td> {{ equipamento.modelo }} </td>
+          <td> {{ equipamento.ano }} </td>
+          <td><button class="editar" (click)="preencherCampos(equipamento)" > Editar </button></td>
+          <td><button class="remover" (click)="removerEquipamento(equipamento.id!)" > Excluir </button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+</body>
+</html>
