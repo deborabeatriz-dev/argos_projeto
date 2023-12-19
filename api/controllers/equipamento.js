@@ -68,3 +68,32 @@ export const updateEquipamento = (req, res) => {
         });
     };
 
+  export const getEquipamentoByPlaca = (req, res) => {
+    const q = "SELECT * FROM equipamentos WHERE placa = ?";
+  
+    db.query(q, [req.params.placa], (err, data) => {
+        if (err) return res.json(err);
+  
+        return res.status(200).json(data[0]);
+        });
+    };
+
+  export const getEquipamentoByModelo = (req, res) => {
+    const q = "SELECT * FROM equipamentos WHERE modelo = ?";
+      
+    db.query(q, [req.params.modelo], (err, data) => {
+        if (err) return res.json(err);
+      
+        return res.status(200).json(data[0]);
+        });
+    };
+        
+  export const getEquipamentoByAno = (req, res) => {
+    const q = "SELECT * FROM equipamentos WHERE ano = ?";
+      
+    db.query(q, [req.params.ano], (err, data) => {
+        if (err) return res.json(err);
+      
+        return res.status(200).json(data[0]);
+        });
+    };
