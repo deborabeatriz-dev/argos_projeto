@@ -11,16 +11,15 @@ export class equipamentosservice {
     private url = environment.api
 
     constructor(private httpClient: HttpClient){
-
     }
 
     obterEquipamentos() {
       return this.httpClient.get<Equipamento[]>(this.url)
     }
 
-    pesquisarEquipamentoId(id: number){
-      return this.httpClient.get<Equipamento[]>(`${this.url}${id}`,);
-    }
+    //pesquisarEquipamentoId(id: number){
+    //  return this.httpClient.get<Equipamento>(`${this.url}${id}`,);
+    //}
 
     cadastrarEquipamento(equipamento: Equipamento) {
       return this.httpClient.post<Equipamento>(this.url, equipamento);

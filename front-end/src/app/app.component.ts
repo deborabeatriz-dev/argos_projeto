@@ -4,6 +4,7 @@ import { environment } from '../environments/environment.development';
 import { Equipamento } from './models/equipamentos.model';
 import { Observable } from 'rxjs';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,7 +23,7 @@ export class AppComponent {
   anoForm = '';
 
   //Pesquisa
-  idPesquisa = 0;
+  idPesquisa = '';
   placaPesquisa = '';
   modeloPesquisa = '';
   anoPesquisa = '';
@@ -32,18 +33,12 @@ export class AppComponent {
   }
 
   obterequipamentosCadastrados(){
-    if (!this.idPesquisa)
-
-      this.equipamentos$ = this.equipamentoSservice.obterEquipamentos();
-    else
-      this.pesquisarEquipamentoId(this.idPesquisa)
-      console.log("teste ok")
+    this.equipamentos$ = this.equipamentoSservice.obterEquipamentos();
   }
 
-  pesquisarEquipamentoId(idPesquisa: number){
-    this.equipamentoSservice.pesquisarEquipamentoId(idPesquisa)
-    .subscribe(_ => this.pesquisarEquipamentoId(idPesquisa))
-  }
+  //pesquisarEquipamentoId(idPesquisa: number){
+  //  this.equipamentoSservice.pesquisarEquipamentoId(idPesquisa)
+  //}
 
   buttonClick(){
     if(!this.placaForm || !this.modeloForm || !this.anoForm)
